@@ -8,21 +8,51 @@
     <ui:VisualElement name="Body" style="flex-grow: 1; flex-basis: 80%;">
         <ui:VisualElement style="flex-grow: 1;"/>
         <ui:VisualElement name="Levels" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-self: center; height: 80%; width: 70%; flex-shrink: 1; align-items: flex-start; align-content: stretch; justify-content: space-evenly; margin-bottom: 26px; margin-top: 22px;">
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+                <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Info" style="flex-grow: 1; height: 30%; padding-top: 22px; padding-right: 150px; padding-bottom: 22px; padding-left: 150px;">
             <ui:VisualElement style="flex-grow: 1; background-color: rgb(208, 211, 216); border-left-color: rgb(208, 211, 216); border-right-color: rgb(208, 211, 216); border-top-color: rgb(208, 211, 216); border-bottom-color: rgb(208, 211, 216); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 41px; border-top-right-radius: 41px; border-bottom-right-radius: 41px; border-bottom-left-radius: 41px; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; align-content: auto; align-self: auto; justify-content: flex-start; align-items: flex-start;">

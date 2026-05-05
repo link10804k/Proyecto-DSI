@@ -45,6 +45,10 @@ public class Level : ScriptableObject
     {
         return _puzzle_title;
     }
+    public Sprite get_sprite()
+    {
+        return _puzzle_sprite;
+    }
     public Vector2Int get_size()
     {
         return _puzzle_size;
