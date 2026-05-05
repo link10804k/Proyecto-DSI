@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bf1ea331569284daf733f26553fdf9, type: 3}
+  m_Name: level15_glonker
+  m_EditorClassIdentifier: Assembly-CSharp::Level
+  _puzzle_id: P015
+  _puzzle_title: Glonker
+  _puzzle_sprite: {fileID: 4545468515971959050, guid: dc4a2ae773bfd25409a2a2587627bcfd, type: 3}
+  _solution_sprite: {fileID: 5547532854444961151, guid: 6fea7ca9450816c42b597cdfd067882a, type: 3}
