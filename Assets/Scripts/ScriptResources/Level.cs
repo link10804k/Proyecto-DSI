@@ -16,7 +16,7 @@ public class Level : ScriptableObject
 
     Vector2Int _puzzle_size;
 
-    int _puzzle_time = -1;
+    int _puzzle_time = 0;
 
     bool _is_completed = false;
 

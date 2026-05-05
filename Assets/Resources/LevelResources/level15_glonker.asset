@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level
   _puzzle_id: P015
   _puzzle_title: Glonker
-  _puzzle_sprite: {fileID: 21300000, guid: dc4a2ae773bfd25409a2a2587627bcfd, type: 3}
+  _puzzle_sprite: {fileID: 21300000, guid: 546dba734b6623142bed47f8d4595e0d, type: 3}
   _solution_sprite: {fileID: 21300000, guid: 6fea7ca9450816c42b597cdfd067882a, type: 3}

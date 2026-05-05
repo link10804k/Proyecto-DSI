@@ -122,7 +122,7 @@ public class SceneManager : MonoBehaviour
                 // Callback para mostrar el tooltip del nivel
                 level_button.RegisterCallback<MouseEnterEvent>((MouseEnterEvent evt) =>
                 {
-                    set_level_selection_tooltip(level_resource);
+                    set_level_selection_tooltip(root, level_resource);
                 });
                 // Mostrar icono nivel solo si este ha sido completado
                 //if (level_resource.is_completed())
@@ -131,9 +131,32 @@ public class SceneManager : MonoBehaviour
             }
         }
     }
-    private void set_level_selection_tooltip(Level level_resource)
+    private void set_level_selection_tooltip(VisualElement root, Level level_resource)
     {
+        VisualElement tooltip_image = root.Q("TooltipImage");
+        tooltip_image.style.backgroundImage = Background.FromSprite(level_resource.get_sprite());
 
+        Label tooltip_id = root.Q<Label>("ID");
+        tooltip_id.text = level_resource.get_id();
+
+        Label tooltip_name = root.Q<Label>("NAME");
+        tooltip_name.text = level_resource.get_title();
+
+        Label tooltip_size = root.Q<Label>("SIZE");
+        Vector2Int size = level_resource.get_size();
+        tooltip_size.text = size.x.ToString() + "x" + size.y.ToString();
+
+        Label tooltip_time = root.Q<Label>("TIMER");
+        int seconds = level_resource.get_time();
+        int minutes = seconds / 60;
+        seconds %= 60;
+        int hours = minutes / 60;
+        minutes %= 60;
+        string string_seconds = (seconds >= 10 ? "0" : "") + seconds.ToString();
+        string string_minutes = (minutes >= 10 ? "0" : "") + minutes.ToString();
+        string string_hours = (hours >= 10 ? "0" : "") + hours.ToString();
+
+        tooltip_time.text = string_hours + ":" + string_minutes + ":" + string_seconds;
     }
     private void set_pause_menu(VisualElement root)
     {
