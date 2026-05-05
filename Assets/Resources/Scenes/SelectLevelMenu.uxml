@@ -1,33 +1,36 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/PauseMeny.uss?fileID=7433441132597879392&amp;guid=20f8e9b0a093d8243b44c8cef94d970d&amp;type=3#PauseMeny"/>
     <ui:VisualElement name="Background" style="flex-grow: 1; position: absolute;">
-        <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/Rectangle%2038(1).svg?fileID=7388822144124034973&amp;guid=b6addc34204486f4180d92000ad335cf&amp;type=3#Rectangle 38(1)" style="position: absolute;"/>
-        <ui:Image name="Image" source="project://database/Assets/Resources/Scenes/SVGs/Subtract.svg?fileID=7388822144124034973&amp;guid=08b95ad0ba254be4094cae64092b0d08&amp;type=3#Subtract"/>
+        <ui:Image source="project://database/Assets/Resources/Images/SVGs/Rectangle%2038(1).svg?fileID=7388822144124034973&amp;guid=b6addc34204486f4180d92000ad335cf&amp;type=3#Rectangle 38(1)" style="position: absolute;"/>
+        <ui:Image name="Image" source="project://database/Assets/Resources/Images/SVGs/Subtract.svg?fileID=7388822144124034973&amp;guid=08b95ad0ba254be4094cae64092b0d08&amp;type=3#Subtract"/>
     </ui:VisualElement>
     <ui:VisualElement name="top" style="flex-grow: 1; background-color: rgb(51, 51, 51);"/>
     <ui:VisualElement name="Body" style="flex-grow: 1; flex-basis: 80%;">
         <ui:VisualElement style="flex-grow: 1;"/>
         <ui:VisualElement name="Levels" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-self: center; height: 80%; width: 70%; flex-shrink: 1; align-items: flex-start; align-content: stretch; justify-content: space-evenly;">
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
-            <ui:Image source="project://database/Assets/Resources/Scenes/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+            <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownLevelButton.svg?fileID=7388822144124034973&amp;guid=f574fc8f7bcedf14d9fad82913803a2b&amp;type=3#UnknownLevelButton" class="LevelButton"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Info" style="flex-grow: 1; height: 30%; padding-top: 22px; padding-right: 150px; padding-bottom: 22px; padding-left: 150px;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgb(188, 191, 196); border-left-color: rgb(188, 191, 196); border-right-color: rgb(188, 191, 196); border-top-color: rgb(188, 191, 196); border-bottom-color: rgb(188, 191, 196); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 41px; border-top-right-radius: 41px; border-bottom-right-radius: 41px; border-bottom-left-radius: 41px;"/>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1;"/>
-        <ui:VisualElement name="Arrow" class="PauseButton">
-            <ui:Image name="ArrowBackground" source="project://database/Assets/Resources/Scenes/SVGs/ArrowBackground.svg?fileID=7388822144124034973&amp;guid=4167bb40ac29fd148b84f07b66e91da3&amp;type=3#ArrowBackground"/>
-            <ui:Image name="ArrowButton" source="project://database/Assets/Resources/Scenes/SVGs/ArrowButton.svg?fileID=7388822144124034973&amp;guid=b0559814b24433b4e91cade6f4c5fb91&amp;type=3#ArrowButton" style="position: absolute; top: auto; left: 5%; right: auto;"/>
+        <ui:VisualElement name="Arrow" class="PauseButton" style="top: 55%;">
+            <ui:Image name="ArrowBackground" source="project://database/Assets/Resources/Images/SVGs/ArrowBackground.svg?fileID=7388822144124034973&amp;guid=4167bb40ac29fd148b84f07b66e91da3&amp;type=3#ArrowBackground"/>
+            <ui:Image name="ArrowButton" source="project://database/Assets/Resources/Images/SVGs/ArrowButton.svg?fileID=7388822144124034973&amp;guid=b0559814b24433b4e91cade6f4c5fb91&amp;type=3#ArrowButton" style="position: absolute; top: auto; left: 5%; right: auto;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="botttom" style="flex-grow: 1; background-color: rgb(51, 51, 51);"/>
