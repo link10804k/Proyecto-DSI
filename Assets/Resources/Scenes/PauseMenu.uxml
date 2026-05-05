@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/pause_button.uss?fileID=7433441132597879392&amp;guid=e7285e40d890b0a4ebfc96cfe2951abe&amp;type=3#pause_button"/>
+    <ui:VisualElement name="Body" style="flex-grow: 1; justify-content: center; border-top-left-radius: 23px; border-top-right-radius: 23px; border-bottom-right-radius: 23px; border-bottom-left-radius: 23px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; border-left-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-top-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); background-color: rgb(51, 51, 51);">
+        <ui:VisualElement name="pauseSteak" style="flex-grow: 1; -unity-text-align: middle-center; justify-content: center; height: 15%;">
+            <ui:Label text="Pause" style="font-size: 20px; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; color: rgb(255, 255, 255);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="White" style="flex-grow: 1; background-color: rgb(255, 255, 255); height: 50%; -unity-text-align: upper-left; justify-content: center; border-bottom-left-radius: 14px; border-bottom-right-radius: 14px;">
+            <ui:Button text="Resume" name="ReturnButton" class="button"/>
+            <ui:Button text="Return to Main Menu" name="ExitButton" class="button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
