@@ -1,0 +1,27 @@
+:root {
+}
+
+.button {
+    align-items: stretch;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: auto;
+    height: 27%;
+    left: 14%;
+    transition-duration: 0.1s;
+}
+
+.button:hover {
+    align-items: stretch;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: auto;
+    height: 30%;
+    left: 14%;
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+}
+
+
