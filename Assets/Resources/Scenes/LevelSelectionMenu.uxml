@@ -65,21 +65,32 @@
                     <ui:VisualElement style="flex-grow: 1; background-color: rgb(255, 0, 206); margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px; width: 150px; height: 100px; align-self: center;"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="Data" style="flex-grow: 1; width: 80%;">
-                    <ui:VisualElement style="flex-grow: 1; align-items: auto; flex-direction: row; width: 100%;">
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 30%; margin-right: 15px; margin-left: 15px;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo"/>
+                    <ui:VisualElement style="flex-grow: 1; align-items: auto; flex-direction: row; width: 100%; height: 50px;">
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 30%; margin-right: 15px; margin-left: 15px; flex-direction: row; align-content: auto; justify-content: flex-end; padding-right: 20px;">
+                            <ui:Label text="P002" name="ID" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-top-right-radius: 32px;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo"/>
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-top-right-radius: 32px; flex-direction: row; justify-content: space-between;">
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="align-content: auto; align-self: auto; justify-content: space-evenly; padding-left: 18px;">
+                                <ui:Label text="NAME" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                            </ui:VisualElement>
+                            <ui:Label text="NAME" name="NAME" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
+                            <ui:VisualElement style="flex-grow: initial;"/>
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement style="flex-grow: initial; width: auto; height: 15px;"/>
-                    <ui:VisualElement style="flex-grow: 1; align-items: auto; flex-direction: row; width: 100%;">
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="flex-wrap: nowrap; width: 30%; margin-right: 15px; margin-left: 15px;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo"/>
+                    <ui:VisualElement style="flex-grow: 1; align-items: auto; flex-direction: row; width: 100%; height: 50px; justify-content: space-evenly;">
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="flex-wrap: nowrap; width: 30%; margin-right: 15px; margin-left: 15px; flex-direction: row; justify-content: space-between;">
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px;">
+                                <ui:Label text="SIZE" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                            </ui:VisualElement>
+                            <ui:Label text="5x5" name="SIZE" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left; align-self: auto; padding-right: 20px;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-bottom-right-radius: 32px;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo"/>
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-bottom-right-radius: 32px; flex-direction: row; justify-content: space-between;">
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px;">
+                                <ui:Label text="TIME&#10;" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                            </ui:VisualElement>
+                            <ui:Label text="00:00:00" name="TIMER" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
+                            <ui:VisualElement style="flex-grow: initial;"/>
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
