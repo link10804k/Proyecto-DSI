@@ -40,7 +40,7 @@ public class SceneManager : MonoBehaviour
         change_scene(State.MainMenu);
     }
 
-    private void change_scene(State state, Level level_resource = null)
+    private void change_scene(State state)
     {
         switch (state)
         {
@@ -66,10 +66,10 @@ public class SceneManager : MonoBehaviour
         Debug.Assert(current_scene != null);
         root.Add(current_scene);
 
-        set_scene(state, level_resource);
+        set_scene(state);
     }
 
-    private void set_scene(State state, Level level_resource)
+    private void set_scene(State state)
     {
         switch (state)
         {
@@ -83,7 +83,7 @@ public class SceneManager : MonoBehaviour
                 set_pause_menu(current_scene);
                 break;
             case State.Level:
-                set_level(current_scene, level_resource);
+                set_level(current_scene);
                 break;
         }
     }
@@ -113,32 +113,36 @@ public class SceneManager : MonoBehaviour
             if (level_resources.Count() > i)
             {
                 VisualElement level_button = level_buttons[i];
-                Level level_resource = level_resources[i];
+                Level level = level_resources[i];
                 // Callback para entrar a un nivel
                 level_button.RegisterCallback<MouseDownEvent>((MouseDownEvent evt) =>
                 {
-                    change_scene(State.Level, level_resource);
+                    level_resource = level;
+                    change_scene(State.Level);
                 });
                 // Callback para mostrar el tooltip del nivel
                 level_button.RegisterCallback<MouseEnterEvent>((MouseEnterEvent evt) =>
                 {
-                    set_level_selection_tooltip(root, level_resource);
+                    level_resource = level;
+                    set_level_selection_tooltip(root);  
                 });
                 // Mostrar icono nivel solo si este ha sido completado
                 //if (level_resource.is_completed())
-                (level_button.Children().First() as Image).sprite = level_resource.get_sprite();
+                (level_button.Children().First() as Image).sprite = level.get_sprite();
                 
             }
         }
     }
-    private void set_level_selection_tooltip(VisualElement root, Level level_resource)
+    private void set_level_selection_tooltip(VisualElement root)
     {
+        //if (level_resource.is_completed())
         VisualElement tooltip_image = root.Q("TooltipImage");
         tooltip_image.style.backgroundImage = Background.FromSprite(level_resource.get_sprite());
 
         Label tooltip_id = root.Q<Label>("ID");
         tooltip_id.text = level_resource.get_id();
 
+        //if (level_resource.is_completed())
         Label tooltip_name = root.Q<Label>("NAME");
         tooltip_name.text = level_resource.get_title();
 
@@ -152,9 +156,9 @@ public class SceneManager : MonoBehaviour
         seconds %= 60;
         int hours = minutes / 60;
         minutes %= 60;
-        string string_seconds = (seconds >= 10 ? "0" : "") + seconds.ToString();
-        string string_minutes = (minutes >= 10 ? "0" : "") + minutes.ToString();
-        string string_hours = (hours >= 10 ? "0" : "") + hours.ToString();
+        string string_seconds = (seconds < 10 ? "0" : "") + seconds.ToString();
+        string string_minutes = (minutes < 10 ? "0" : "") + minutes.ToString();
+        string string_hours = (hours < 10 ? "0" : "") + hours.ToString();
 
         tooltip_time.text = string_hours + ":" + string_minutes + ":" + string_seconds;
     }
@@ -162,8 +166,87 @@ public class SceneManager : MonoBehaviour
     {
 
     }
-    private void set_level(VisualElement root, Level level_resource)
+
+    enum CellState
     {
-        Debug.Assert(level_resource != null);
+        Blank,
+        Filled,
+        Marked
+    }
+
+    List<List<CellState>> cell_state_matrix;
+    List<List<VisualElement>> cell_matrix;
+    Level level_resource;
+
+    private void set_level(VisualElement root)
+    {
+        // Crear matriz de casillas
+        for (int y = 0; y < level_resource.get_size().y; y++)
+        {
+            for (int x = 0; x < level_resource.get_size().x; x++)
+            {
+                // Esto debería instanciar un elemento o algo
+                VisualElement cell = new VisualElement();
+
+                cell.RegisterCallback<MouseDownEvent>((MouseDownEvent evt) =>
+                {
+                    if (evt.button == 0) // Clic izquierdo
+                    {
+                        fill_cell(x, y);
+                    }
+                    else if (evt.button == 1) // Clic derecho
+                    {
+                        mark_cell(x, y);
+                    }
+                });
+            }
+        }
+    }
+    private void fill_cell(int x, int y)
+    {
+        if (cell_state_matrix[x][y] == CellState.Blank)
+        {
+            cell_state_matrix[x][y] = CellState.Filled;
+            // Cambiar sprite
+            //cell_matrix[x][y]...
+        }
+        else
+        {
+            cell_state_matrix[x][y] = CellState.Blank;
+            // Cambiar sprite
+            //cell_matrix[x][y]...
+        }
+        check_solution();
+    }
+    private void mark_cell(int x, int y)
+    {
+        if (cell_state_matrix[x][y] == CellState.Blank)
+        {
+            cell_state_matrix[x][y] = CellState.Marked;
+            // Cambiar sprite
+            //cell_matrix[x][y]...
+        }
+        else
+        {
+            cell_state_matrix[x][y] = CellState.Blank;
+            // Cambiar sprite
+            //cell_matrix[x][y]...
+        }
+        check_solution();
+    }
+    private bool check_solution() 
+    {
+        List<List<bool>> solution_matrix = level_resource.get_solution_matrix();
+        for (int y = 0; y < solution_matrix.Count(); y++)
+        {
+            for (int x = 0; x < solution_matrix[0].Count(); x++)
+            {
+                if ((cell_state_matrix[x][y] == CellState.Filled && !solution_matrix[x][y]) ||
+                    (cell_state_matrix[x][y] == CellState.Blank && solution_matrix[x][y]) ||
+                    (cell_state_matrix[x][y] == CellState.Marked && solution_matrix[x][y])) 
+                    return false;
+            }
+        }
+        return true;
     }
 }
