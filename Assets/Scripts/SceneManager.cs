@@ -180,13 +180,26 @@ public class SceneManager : MonoBehaviour
 
     private void set_level(VisualElement root)
     {
+        cell_matrix = new List<List<VisualElement>>();
+        //cell_matrix.ForEach((cell_row) => cell_row = new List<VisualElement>(level_resource.get_size().x));
+        //cell_state_matrix = new List<List<CellState>>();
+
+        VisualTreeAsset cell_template = Resources.Load<VisualTreeAsset>("Templates/PuzzleCell");
+        VisualElement board = root.Q("Tablero");
         // Crear matriz de casillas
         for (int y = 0; y < level_resource.get_size().y; y++)
         {
+            List<VisualElement> cell_row = new List<VisualElement>();
+            cell_matrix.Add(cell_row);
+            VisualElement row = new VisualElement();
+            row.style.flexDirection = FlexDirection.Row;
+            board.Add(row);
             for (int x = 0; x < level_resource.get_size().x; x++)
             {
-                // Esto debería instanciar un elemento o algo
-                VisualElement cell = new VisualElement();
+                // Instanciamos una casilla
+                VisualElement cell = cell_template.Instantiate();
+                cell_row.Add(cell);
+                row.Add(cell);
 
                 cell.RegisterCallback<MouseDownEvent>((MouseDownEvent evt) =>
                 {
@@ -208,13 +221,21 @@ public class SceneManager : MonoBehaviour
         {
             cell_state_matrix[x][y] = CellState.Filled;
             // Cambiar sprite
-            //cell_matrix[x][y]...
+            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            {
+                if (state_sprite.name == "Filled") state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.Flex;
+            }
         }
         else
         {
             cell_state_matrix[x][y] = CellState.Blank;
             // Cambiar sprite
-            //cell_matrix[x][y]...
+            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            {
+                if (state_sprite.name == "Blank") state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.Flex;
+            }
         }
         check_solution();
     }
@@ -224,13 +245,21 @@ public class SceneManager : MonoBehaviour
         {
             cell_state_matrix[x][y] = CellState.Marked;
             // Cambiar sprite
-            //cell_matrix[x][y]...
+            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            {
+                if (state_sprite.name == "Marked") state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.Flex;
+            }
         }
         else
         {
             cell_state_matrix[x][y] = CellState.Blank;
             // Cambiar sprite
-            //cell_matrix[x][y]...
+            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            {
+                if (state_sprite.name == "Blank") state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.Flex;
+            }
         }
         check_solution();
     }
