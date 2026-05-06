@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 [CreateAssetMenu(fileName = "Level", menuName = "Scriptable Objects/Level")]
 public class Level : ScriptableObject
@@ -22,17 +23,21 @@ public class Level : ScriptableObject
 
     List<List<bool>> _solution_matrix;
 
-    private void Awake()
+    private void OnEnable()
     {
         _puzzle_size = new Vector2Int(_puzzle_sprite.texture.width, _puzzle_sprite.texture.height);
         
+        _solution_matrix = new List<List<bool>>();
         for (int y = 0; y < _puzzle_size.y; y++)
         {
-            for (int x = 0; x < _puzzle_size.x; x++)
+            List<bool> _solution_row = new List<bool>();
+            for (int x = _puzzle_size.x - 1; x >= 0; x++)
             {
+                if (x == 0) _solution_matrix.Add(_solution_row);
+
                 Color pixel_color = _solution_sprite.texture.GetPixel(x, y);
-                if (pixel_color.r > 0.5f && pixel_color.g > 0.5f && pixel_color.b > 0.5f) _solution_matrix[x][y] = true;
-                else _solution_matrix[x][y] = false;
+                if (pixel_color.r < 0.3f && pixel_color.g < 0.3f && pixel_color.b < 0.3f) _solution_row.Add(true);
+                else _solution_row.Add(false);
             }
         }
     }
