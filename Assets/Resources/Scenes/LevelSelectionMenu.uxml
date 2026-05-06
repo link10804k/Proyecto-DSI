@@ -6,12 +6,11 @@
     </ui:VisualElement>
     <ui:VisualElement name="top" style="flex-grow: 1; background-color: rgb(51, 51, 51);"/>
     <ui:VisualElement name="Body" style="flex-grow: 1; flex-basis: 80%;">
-        <ui:VisualElement style="flex-grow: 1;"/>
-        <ui:VisualElement name="Levels" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-self: center; height: 80%; width: 70%; flex-shrink: 1; align-items: flex-start; align-content: stretch; justify-content: space-evenly; margin-bottom: 26px; margin-top: 22px; padding-top: 12px;">
-            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+        <ui:VisualElement name="Levels" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-self: center; height: 80%; width: 70%; flex-shrink: 1; align-items: flex-start; align-content: stretch; justify-content: space-evenly; margin-bottom: 1px; margin-top: 20px; padding-top: 12px; margin-right: -60px; margin-left: -60px;">
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;); aspect-ratio: auto;">
                 <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
             </ui:VisualElement>
-            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
+            <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;); aspect-ratio: auto;">
                 <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
             </ui:VisualElement>
             <ui:VisualElement class="LevelButton" style="flex-grow: 1; background-image: resource(&quot;Images/SVGs/CuadroNivel&quot;);">
@@ -54,14 +53,13 @@
                 <ui:Image source="project://database/Assets/Resources/Images/SVGs/UnknownImage.svg?fileID=7388822144124034973&amp;guid=e9b861f2479d8ac46b860eb3456dd664&amp;type=3#UnknownImage" style="aspect-ratio: 1;"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1;"/>
-        <ui:VisualElement name="Arrow" class="PauseButton" style="top: 55%;">
-            <ui:Image name="ArrowBackground" source="project://database/Assets/Resources/Images/SVGs/ArrowBackground.svg?fileID=7388822144124034973&amp;guid=4167bb40ac29fd148b84f07b66e91da3&amp;type=3#ArrowBackground"/>
-            <ui:Image name="ArrowButton" source="project://database/Assets/Resources/Images/SVGs/ArrowButton.svg?fileID=7388822144124034973&amp;guid=b0559814b24433b4e91cade6f4c5fb91&amp;type=3#ArrowButton" style="position: absolute; top: auto; left: 5%; right: auto;"/>
+        <ui:VisualElement name="Arrow" class="PauseButton" style="top: 55%; right: -13%; transition-property: translate; translate: 0 0;">
+            <ui:Image name="ArrowBackground" source="project://database/Assets/Resources/Images/SVGs/ArrowBackground.svg?fileID=7388822144124034973&amp;guid=4167bb40ac29fd148b84f07b66e91da3&amp;type=3#ArrowBackground" style="width: 60%; height: 80%;"/>
+            <ui:Image name="ArrowButton" source="project://database/Assets/Resources/Images/SVGs/ArrowButton.svg?fileID=7388822144124034973&amp;guid=b0559814b24433b4e91cade6f4c5fb91&amp;type=3#ArrowButton" style="position: absolute; top: auto; left: 5%; right: auto; width: 20%;"/>
         </ui:VisualElement>
         <ui:VisualElement name="Info" style="flex-grow: 1; height: 30%; padding-top: 22px; padding-right: 150px; padding-bottom: 22px; padding-left: 150px;">
-            <ui:VisualElement style="flex-grow: 1; background-color: rgb(208, 211, 216); border-left-color: rgb(208, 211, 216); border-right-color: rgb(208, 211, 216); border-top-color: rgb(208, 211, 216); border-bottom-color: rgb(208, 211, 216); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 41px; border-top-right-radius: 41px; border-bottom-right-radius: 41px; border-bottom-left-radius: 41px; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; align-content: auto; align-self: auto; justify-content: flex-start; align-items: flex-start;">
-                <ui:VisualElement name="Photo" style="flex-grow: 1; width: 20%; height: 100%; background-color: rgb(51, 51, 51); border-top-left-radius: 32px; border-bottom-left-radius: 32px; border-left-color: rgb(51, 51, 51); border-right-color: rgb(51, 51, 51); border-top-color: rgb(51, 51, 51); border-bottom-color: rgb(51, 51, 51); align-self: center;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgb(208, 211, 216); border-left-color: rgb(208, 211, 216); border-right-color: rgb(208, 211, 216); border-top-color: rgb(208, 211, 216); border-bottom-color: rgb(208, 211, 216); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 28px; border-top-right-radius: 28px; border-bottom-right-radius: 28px; border-bottom-left-radius: 28px; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; align-content: auto; align-self: auto; justify-content: flex-start; align-items: flex-start;">
+                <ui:VisualElement name="Photo" style="flex-grow: 1; width: 20%; height: 100%; background-color: rgb(51, 51, 51); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-left-color: rgb(51, 51, 51); border-right-color: rgb(51, 51, 51); border-top-color: rgb(51, 51, 51); border-bottom-color: rgb(51, 51, 51); align-self: center;">
                     <ui:VisualElement name="TooltipImage" style="flex-grow: 1; background-color: rgba(55, 55, 55, 0); margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px; width: 150px; height: 100px; align-self: center; aspect-ratio: 1; background-image: resource(&quot;Images/SVGs/UnknownImage&quot;); border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-left-color: rgb(251, 253, 254); border-right-color: rgb(251, 253, 254); border-top-color: rgb(251, 253, 254); border-bottom-color: rgb(251, 253, 254);"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="Data" style="flex-grow: 1; width: 80%;">
@@ -69,9 +67,9 @@
                         <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 30%; margin-right: 15px; margin-left: 15px; flex-direction: row; align-content: auto; justify-content: flex-end; padding-right: 20px;">
                             <ui:Label text="P002" name="ID" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-top-right-radius: 32px; flex-direction: row; justify-content: space-between;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo" style="align-content: auto; align-self: auto; justify-content: space-evenly; padding-left: 18px;">
-                                <ui:Label text="TITLE" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-top-right-radius: 15px; flex-direction: row; justify-content: space-between;">
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="align-content: auto; align-self: auto; justify-content: space-evenly; padding-left: 18px; height: 60%; border-bottom-right-radius: 8px;">
+                                <ui:Label text="TITLE" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px; margin-top: 0;"/>
                             </ui:VisualElement>
                             <ui:Label text="NAME" name="NAME" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
                             <ui:VisualElement style="flex-grow: initial;"/>
@@ -80,14 +78,14 @@
                     <ui:VisualElement style="flex-grow: initial; width: auto; height: 15px;"/>
                     <ui:VisualElement style="flex-grow: 1; align-items: auto; flex-direction: row; width: 100%; height: 50px; justify-content: space-evenly;">
                         <ui:VisualElement name="InfoDisplay" class="textInfo" style="flex-wrap: nowrap; width: 30%; margin-right: 15px; margin-left: 15px; flex-direction: row; justify-content: space-between;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px;">
-                                <ui:Label text="SIZE" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px; height: 60%; border-bottom-right-radius: 8px;">
+                                <ui:Label text="SIZE" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px; margin-top: 0;"/>
                             </ui:VisualElement>
                             <ui:Label text="5x5" name="SIZE" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left; align-self: auto; padding-right: 20px;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-bottom-right-radius: 32px; flex-direction: row; justify-content: space-between;">
-                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px;">
-                                <ui:Label text="TIME&#10;" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px;"/>
+                        <ui:VisualElement name="InfoDisplay" class="textInfo" style="width: 70%; border-bottom-right-radius: 15px; flex-direction: row; justify-content: space-between;">
+                            <ui:VisualElement name="moreInfo" class="moreInfo" style="padding-left: 18px; height: 60%; border-bottom-right-radius: 8px;">
+                                <ui:Label text="TIME&#10;" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); -unity-font-style: bold; font-size: 18px; padding-top: 2px; margin-top: 0;"/>
                             </ui:VisualElement>
                             <ui:Label text="00:00:00" name="TIMER" style="font-size: 30px; -unity-font-style: bold; -unity-font-definition: resource(&quot;Inter-VariableFont_opsz,wght&quot;); height: auto; aspect-ratio: auto; -unity-text-align: middle-left;"/>
                             <ui:VisualElement style="flex-grow: initial;"/>
