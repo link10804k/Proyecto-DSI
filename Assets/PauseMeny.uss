@@ -12,10 +12,6 @@
     flex-wrap: wrap;
 }
 
-
-
-
-
 .LevelButton {
     margin-top: 0;
     margin-right: 37px;
@@ -28,7 +24,7 @@
     padding-bottom: 43px;
     padding-left: 43px;
     aspect-ratio: 1;
-    width: 6%;
+    width: 12%;
     transition-property: scale;
     transition-duration: 0.1s;
 }

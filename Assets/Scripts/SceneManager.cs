@@ -188,6 +188,7 @@ public class SceneManager : MonoBehaviour
 
         VisualTreeAsset cell_template = Resources.Load<VisualTreeAsset>("Templates/PuzzleCell");
         VisualElement board = root.Q("Tablero");
+
         // Crear matriz de casillas
         for (int y = 0; y < level_resource.get_size().y; y++)
         {
@@ -206,16 +207,16 @@ public class SceneManager : MonoBehaviour
 
                 CellState s = CellState.Blank;
                 cell_state_row.Add(s);
-                Debug.Log(cell_state_matrix[y][x]);
+                //Debug.Log(cell_state_matrix[y][x]);
                 // Instanciamos una casilla
                 VisualElement cell = cell_template.Instantiate();
                 cell.style.flexGrow = 1;
                 cell.style.flexShrink = 1;
                 cell_row.Add(cell);
 
-                int border_width = (int)(200 * Math.Pow(level_resource.get_size().x, -2));
-                Debug.Log(border_width);
-                int border_radius = border_width / 2;
+                int border_width = (int)(50 * Math.Pow(level_resource.get_size().x, -1));
+                //Debug.Log(border_width);
+                int border_radius = border_width;
 
                 VisualElement cell_root = cell.Children().First();
 
@@ -227,6 +228,15 @@ public class SceneManager : MonoBehaviour
                 cell_root.style.borderTopRightRadius = border_radius;
                 cell_root.style.borderBottomLeftRadius = border_radius;
                 cell_root.style.borderBottomRightRadius = border_radius;
+
+                foreach (var child in cell_root.Children())
+                {
+                    child.style.borderTopLeftRadius = border_radius;
+                    child.style.borderTopRightRadius = border_radius;
+                    child.style.borderBottomLeftRadius = border_radius;
+                    child.style.borderBottomRightRadius = border_radius;
+                }
+
                 row.Add(cell);
 
                 int current_x = x;
@@ -244,10 +254,72 @@ public class SceneManager : MonoBehaviour
                 });
             }
         }
+        create_numbers();
+    }
+
+    private void create_numbers()
+    {
+        VisualElement number_rows = root.Q("Filas");
+        VisualElement number_cols = root.Q("Columnas");
+
+        VisualTreeAsset number_row_template = Resources.Load<VisualTreeAsset>("Templates/NumbersRow");
+        VisualTreeAsset number_column_template = Resources.Load<VisualTreeAsset>("Templates/NumbersColumn");
+
+        List<List<bool>> solution_matrix = level_resource.get_solution_matrix();
+
+        int count = 0;
+        int text_index = 0;
+        for (int x = 0; x < solution_matrix[0].Count(); x++)
+        {
+            VisualElement number_column = number_column_template.Instantiate(); 
+            for (int y = solution_matrix.Count() - 1; y >= 0; y--)
+            {
+                if (solution_matrix[y][x]) count++;
+                else if (count > 0)
+                {
+                    (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                    count = 0;
+                    text_index++;
+                }
+            }
+            if (count > 0)
+            {
+                (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                count = 0;
+                text_index++;
+            }
+            text_index = 0;
+            number_cols.Add(number_column);
+        }
+
+        count = 0;
+        text_index = 0;
+        for (int x = 0; x < solution_matrix[0].Count(); x++)
+        {
+            VisualElement number_row = number_row_template.Instantiate();
+            for (int y = solution_matrix.Count() - 1; y >= 0; y--)
+            {
+                if (solution_matrix[y][x]) count++;
+                else if (count > 0)
+                {
+                    (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                    count = 0;
+                    text_index++;
+                }
+            }
+            if (count > 0)
+            {
+                (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                count = 0;
+                text_index++;
+            }
+            text_index = 0;
+            number_cols.Add(number_row);
+        }
     }
     private void fill_cell(int x, int y)
     {
-        Debug.Log("Filled cell in " + x + "," + + y);
+        //Debug.Log("Filled cell in " + x + "," + + y);
         if (cell_state_matrix[y][x] == CellState.Blank)
         {
             cell_state_matrix[y][x] = CellState.Filled;
@@ -272,7 +344,7 @@ public class SceneManager : MonoBehaviour
     }
     private void mark_cell(int x, int y)
     {
-        Debug.Log("Marked cell in " + x + "," + +y);
+        //Debug.Log("Marked cell in " + x + "," + +y);
         if (cell_state_matrix[y][x] == CellState.Blank)
         {
             cell_state_matrix[y][x] = CellState.Marked;

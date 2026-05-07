@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72bf1ea331569284daf733f26553fdf9, type: 3}
-  m_Name: level1_creeper
+  m_Name: level1_creeper 1
   m_EditorClassIdentifier: Assembly-CSharp::Level
   _puzzle_id: P001
   _puzzle_title: Creeper
