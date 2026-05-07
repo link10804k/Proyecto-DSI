@@ -29,6 +29,8 @@
     padding-left: 43px;
     aspect-ratio: 1;
     width: 6%;
+    transition-property: scale;
+    transition-duration: 0.1s;
 }
 
 .textInfo {
@@ -63,5 +65,23 @@
     transition-property: right;
     translate: 0 0;
     position: absolute;
+    transition-duration: 0.1s;
+}
+
+.LevelButton:hover {
+    margin-top: 0;
+    margin-right: 37px;
+    margin-bottom: 0;
+    margin-left: 27px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    aspect-ratio: 1;
+    width: 6%;
+    scale: 1.1 1.1;
+    transition-property: scale;
     transition-duration: 0.1s;
 }
