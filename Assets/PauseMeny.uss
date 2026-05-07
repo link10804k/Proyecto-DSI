@@ -12,26 +12,9 @@
     flex-wrap: wrap;
 }
 
-.PauseButton {
-    flex-grow: 1;
-    position: absolute;
-    top: 70%;
-    right: -6%;
-    justify-content: center;
-    transition-property: right;
-    transition-duration: 0.1s;
-}
 
-.PauseButton:hover {
-    flex-grow: 1;
-    position: absolute;
-    top: 70%;
-    right: -4%;
-    justify-content: center;
-    transition-property: translate;
-    transition-duration: 0.1s;
-    translate: -34px 0;
-}
+
+
 
 .LevelButton {
     margin-top: 0;
@@ -62,4 +45,23 @@
     width: 100px;
     justify-content: center;
     border-bottom-right-radius: 20px;
+}
+
+.Puase_button {
+    top: 55%;
+    right: -8%;
+    transition-property: right;
+    translate: 0 0;
+    position: absolute;
+    transition-duration: 0.1s;
+    justify-content: center;
+}
+
+.Puase_button:hover {
+    top: 55%;
+    right: -6%;
+    transition-property: right;
+    translate: 0 0;
+    position: absolute;
+    transition-duration: 0.1s;
 }
