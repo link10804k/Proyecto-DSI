@@ -181,6 +181,7 @@ public class SceneManager : MonoBehaviour
     private void set_level(VisualElement root)
     {
         cell_matrix = new List<List<VisualElement>>();
+        cell_state_matrix = new List<List<CellState>>();
         //cell_matrix.ForEach((cell_row) => cell_row = new List<VisualElement>(level_resource.get_size().x));
         //cell_state_matrix = new List<List<CellState>>();
 
@@ -189,27 +190,40 @@ public class SceneManager : MonoBehaviour
         // Crear matriz de casillas
         for (int y = 0; y < level_resource.get_size().y; y++)
         {
-            List<VisualElement> cell_row = new List<VisualElement>();
-            cell_matrix.Add(cell_row);
+            List<CellState> cell_state_row = new List<CellState>();
+            List<VisualElement> cell_row = new List<VisualElement>();  
             VisualElement row = new VisualElement();
             row.style.flexDirection = FlexDirection.Row;
-            board.Add(row);
+            row.style.flexGrow = 1;
+            row.style.flexShrink = 1;
             for (int x = 0; x < level_resource.get_size().x; x++)
             {
+                if (x == 0) cell_state_matrix.Add(cell_state_row);
+                if (x == 0) cell_matrix.Add(cell_row);
+                if (x == 0) 
+                    board.Add(row);
+
+                CellState s = CellState.Blank;
+                cell_state_row.Add(s);
+                Debug.Log(cell_state_matrix[y][x]);
                 // Instanciamos una casilla
                 VisualElement cell = cell_template.Instantiate();
+                cell.style.flexGrow = 1;
+                cell.style.flexShrink = 1;
                 cell_row.Add(cell);
                 row.Add(cell);
 
+                int current_x = x;
+                int current_y = y;
                 cell.RegisterCallback<MouseDownEvent>((MouseDownEvent evt) =>
                 {
                     if (evt.button == 0) // Clic izquierdo
                     {
-                        fill_cell(x, y);
+                        fill_cell(current_x, current_y);
                     }
                     else if (evt.button == 1) // Clic derecho
                     {
-                        mark_cell(x, y);
+                        mark_cell(current_x, current_y);
                     }
                 });
             }
@@ -217,65 +231,68 @@ public class SceneManager : MonoBehaviour
     }
     private void fill_cell(int x, int y)
     {
-        if (cell_state_matrix[x][y] == CellState.Blank)
+        Debug.Log("Filled cell in " + x + "," + + y);
+        if (cell_state_matrix[y][x] == CellState.Blank)
         {
-            cell_state_matrix[x][y] = CellState.Filled;
+            cell_state_matrix[y][x] = CellState.Filled;
             // Cambiar sprite
-            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            foreach (VisualElement state_sprite in (cell_matrix[y][x].Children().First()).Children())
             {
                 if (state_sprite.name == "Filled") state_sprite.style.display = DisplayStyle.Flex;
-                else state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.None;
             }
         }
         else
         {
-            cell_state_matrix[x][y] = CellState.Blank;
+            cell_state_matrix[y][x] = CellState.Blank;
             // Cambiar sprite
-            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            foreach (VisualElement state_sprite in (cell_matrix[y][x].Children().First()).Children())
             {
                 if (state_sprite.name == "Blank") state_sprite.style.display = DisplayStyle.Flex;
-                else state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.None;
             }
         }
         check_solution();
     }
     private void mark_cell(int x, int y)
     {
-        if (cell_state_matrix[x][y] == CellState.Blank)
+        Debug.Log("Marked cell in " + x + "," + +y);
+        if (cell_state_matrix[y][x] == CellState.Blank)
         {
-            cell_state_matrix[x][y] = CellState.Marked;
+            cell_state_matrix[y][x] = CellState.Marked;
             // Cambiar sprite
-            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            foreach (VisualElement state_sprite in (cell_matrix[y][x].Children().First()).Children())
             {
                 if (state_sprite.name == "Marked") state_sprite.style.display = DisplayStyle.Flex;
-                else state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.None;
             }
         }
         else
         {
-            cell_state_matrix[x][y] = CellState.Blank;
+            cell_state_matrix[y][x] = CellState.Blank;
             // Cambiar sprite
-            foreach (VisualElement state_sprite in cell_matrix[x][y].Children())
+            foreach (VisualElement state_sprite in (cell_matrix[y][x].Children().First()).Children())
             {
                 if (state_sprite.name == "Blank") state_sprite.style.display = DisplayStyle.Flex;
-                else state_sprite.style.display = DisplayStyle.Flex;
+                else state_sprite.style.display = DisplayStyle.None;
             }
         }
         check_solution();
     }
-    private bool check_solution() 
+    private void check_solution() 
     {
         List<List<bool>> solution_matrix = level_resource.get_solution_matrix();
         for (int y = 0; y < solution_matrix.Count(); y++)
         {
             for (int x = 0; x < solution_matrix[0].Count(); x++)
             {
-                if ((cell_state_matrix[x][y] == CellState.Filled && !solution_matrix[x][y]) ||
-                    (cell_state_matrix[x][y] == CellState.Blank && solution_matrix[x][y]) ||
-                    (cell_state_matrix[x][y] == CellState.Marked && solution_matrix[x][y])) 
-                    return false;
+                if ((cell_state_matrix[y][x] == CellState.Filled && !solution_matrix[y][x]) ||
+                    (cell_state_matrix[y][x] == CellState.Blank && solution_matrix[y][x]) ||
+                    (cell_state_matrix[y][x] == CellState.Marked && solution_matrix[y][x]))
+                    return;
             }
         }
-        return true;
+        // Poner cosas victoria
+        change_scene(State.LevelSelectionMenu);
     }
 }
