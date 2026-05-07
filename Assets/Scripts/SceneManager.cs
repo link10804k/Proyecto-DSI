@@ -1,9 +1,10 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Linq;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
+using System;
 
 public class SceneManager : MonoBehaviour
 {
@@ -211,6 +212,21 @@ public class SceneManager : MonoBehaviour
                 cell.style.flexGrow = 1;
                 cell.style.flexShrink = 1;
                 cell_row.Add(cell);
+
+                int border_width = (int)(200 * Math.Pow(level_resource.get_size().x, -2));
+                Debug.Log(border_width);
+                int border_radius = border_width / 2;
+
+                VisualElement cell_root = cell.Children().First();
+
+                cell_root.style.borderRightWidth = border_width;
+                cell_root.style.borderBottomWidth = border_width;
+                cell_root.style.borderLeftWidth = border_width;
+                cell_root.style.borderTopWidth = border_width;
+                cell_root.style.borderTopLeftRadius = border_radius;
+                cell_root.style.borderTopRightRadius = border_radius;
+                cell_root.style.borderBottomLeftRadius = border_radius;
+                cell_root.style.borderBottomRightRadius = border_radius;
                 row.Add(cell);
 
                 int current_x = x;

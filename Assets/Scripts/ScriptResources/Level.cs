@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 
@@ -28,7 +28,7 @@ public class Level : ScriptableObject
         _puzzle_size = new Vector2Int(_puzzle_sprite.texture.width, _puzzle_sprite.texture.height);
         
         _solution_matrix = new List<List<bool>>();
-        for (int y = 0; y < _puzzle_size.y; y++)
+        for (int y = _puzzle_size.y - 1; y >= 0; y--)
         {
             List<bool> _solution_row = new List<bool>();
             for (int x = _puzzle_size.x - 1; x >= 0; x--)
