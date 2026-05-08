@@ -273,25 +273,25 @@ public class SceneManager : MonoBehaviour
         for (int x = 0; x < solution_matrix[0].Count(); x++)
         {
             VisualElement number_column = number_column_template.Instantiate(); 
-            for (int y = solution_matrix.Count() - 1; y >= 0; y--)
+            for (int y = 0; y < solution_matrix.Count(); y++)
             {
                 if (solution_matrix[y][x]) count++;
                 else if (count > 0)
                 {
-                    (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                    (number_column.Children().First().Children().First() as Label).text = count.ToString();
                     count = 0;
                     text_index++;
                 }
             }
             if (count > 0)
             {
-                (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                (number_column.Children().First().Children().First() as Label).text = count.ToString();
                 count = 0;
                 text_index++;
             }
             if (text_index == 0)
             {
-                (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = "0";
+                (number_column.Children().First().Children().First() as Label).text = "0";
             }
             text_index = 0;
             number_cols.Add(number_column);
@@ -303,25 +303,25 @@ public class SceneManager : MonoBehaviour
         for (int y = 0; y < solution_matrix[0].Count(); y++)
         {
             VisualElement number_row = number_row_template.Instantiate();
-            for (int x = solution_matrix.Count() - 1; x >= 0; x--)
+            for (int x = 0; x < solution_matrix.Count(); x++)
             {
                 if (solution_matrix[y][x]) count++;
                 else if (count > 0)
                 {
-                    (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                    (number_row.Children().First().Children().First() as Label).text += count.ToString();
                     count = 0;
                     text_index++;
                 }
             }
             if (count > 0)
             {
-                (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = count.ToString();
+                (number_row.Children().First().Children().First() as Label).text += count.ToString();
                 count = 0;
                 text_index++;
             }
             if (text_index == 0)
             {
-                (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = "0";
+                (number_row.Children().First().Children().First() as Label).text = "0";
             }
             text_index = 0;
             number_rows.Add(number_row);
