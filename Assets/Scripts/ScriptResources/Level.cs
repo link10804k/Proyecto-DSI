@@ -62,10 +62,18 @@ public class Level : ScriptableObject
     {
         return _puzzle_time;
     }
+    public void set_time(int seconds)
+    {
+        _puzzle_time = seconds;
+    }
 
     public bool is_completed()
     {
         return _is_completed;
+    }
+    public void set_completed(bool completed)
+    {
+        _is_completed = completed;
     }
     public List<List<bool>> get_solution_matrix()
     {

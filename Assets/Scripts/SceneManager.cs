@@ -128,26 +128,35 @@ public class SceneManager : MonoBehaviour
                     set_level_selection_tooltip(root);  
                 });
                 // Mostrar icono nivel solo si este ha sido completado
-                //if (level_resource.is_completed())
-                (level_button.Children().First() as Image).sprite = level.get_sprite();
+                if (level.is_completed())
+                    (level_button.Children().First() as Image).sprite = level.get_sprite();
                 
             }
         }
     }
     private void set_level_selection_tooltip(VisualElement root)
     {
-        //if (level_resource.is_completed())
-        VisualElement tooltip_image = root.Q("TooltipImage");
-        tooltip_image.style.backgroundImage = Background.FromSprite(level_resource.get_sprite());
+        if (level_resource.is_completed())
+        {
+            VisualElement tooltip_image = root.Q("TooltipImage");
+            tooltip_image.style.backgroundImage = Background.FromSprite(level_resource.get_sprite());
+        }
+        
 
         Label tooltip_id = root.Q<Label>("ID");
         tooltip_id.text = level_resource.get_id();
 
-        //if (level_resource.is_completed())
         Label tooltip_name = root.Q<Label>("NAME");
-        tooltip_name.text = level_resource.get_title();
+        if (level_resource.is_completed())
+        {
+            tooltip_name.text = level_resource.get_title();
+        }
+        else
+        {
+            tooltip_name.text = "???";
+        }
 
-        Label tooltip_size = root.Q<Label>("SIZE");
+            Label tooltip_size = root.Q<Label>("SIZE");
         Vector2Int size = level_resource.get_size();
         tooltip_size.text = size.x.ToString() + "x" + size.y.ToString();
 
@@ -181,6 +190,8 @@ public class SceneManager : MonoBehaviour
 
     private void set_level(VisualElement root)
     {
+        StartCoroutine(advance_timer());
+
         cell_matrix = new List<List<VisualElement>>();
         cell_state_matrix = new List<List<CellState>>();
         //cell_matrix.ForEach((cell_row) => cell_row = new List<VisualElement>(level_resource.get_size().x));
@@ -397,6 +408,54 @@ public class SceneManager : MonoBehaviour
             }
         }
         // Poner cosas victoria
+        StopCoroutine(advance_timer());
+
+        level_resource.set_time(timer);
+        level_resource.set_completed(true);
+
+        finish_animation();
+
         change_scene(State.LevelSelectionMenu);
+    }
+    int timer = 0;
+    IEnumerator<WaitForSeconds> advance_timer()
+    {
+        for (; ; )
+        {
+            yield return new WaitForSeconds(1);
+            timer += 1;
+            Label timer_label = root.Q("Tooltip").Q<Label>();
+            int seconds = timer;
+            int minutes = seconds / 60;
+            seconds %= 60;
+            int hours = minutes / 60;
+            minutes %= 60;
+            string string_seconds = (seconds < 10 ? "0" : "") + seconds.ToString();
+            string string_minutes = (minutes < 10 ? "0" : "") + minutes.ToString();
+            string string_hours = (hours < 10 ? "0" : "") + hours.ToString();
+
+            timer_label.text = string_hours + ":" + string_minutes + ":" + string_seconds;
+        }
+    }
+
+    void finish_animation()
+    {
+        recursive_finish_animation(0, 0);
+    }
+    IEnumerable<WaitForSeconds> recursive_finish_animation(int x, int y)
+    {
+        int sprite_x = level_resource.get_size().x - 1 - x;
+        int sprite_y = level_resource.get_size().y - 1 - y;
+        if (sprite_y == 0 && sprite_x < 0)
+        {
+            change_scene(State.LevelSelectionMenu);
+            yield return new WaitForSeconds(0);
+        }
+        if (sprite_x < 0 || sprite_y < 0) yield return new WaitForSeconds(0);
+        cell_matrix[y][x].Children().First().style.backgroundImage = null;
+        cell_matrix[y][x].Children().First().style.backgroundColor = level_resource.get_sprite().texture.GetPixel(sprite_x, sprite_y);
+        yield return new WaitForSeconds(1);
+        recursive_finish_animation(x + 1, y);
+        recursive_finish_animation(x, y + 1);
     }
 }
