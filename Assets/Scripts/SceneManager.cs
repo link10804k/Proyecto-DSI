@@ -269,6 +269,7 @@ public class SceneManager : MonoBehaviour
 
         int count = 0;
         int text_index = 0;
+        
         for (int x = 0; x < solution_matrix[0].Count(); x++)
         {
             VisualElement number_column = number_column_template.Instantiate(); 
@@ -288,16 +289,21 @@ public class SceneManager : MonoBehaviour
                 count = 0;
                 text_index++;
             }
+            if (text_index == 0)
+            {
+                (number_column.Children().First().Children().ToList()[text_index].Children().First() as Label).text = "0";
+            }
             text_index = 0;
             number_cols.Add(number_column);
         }
+        
 
         count = 0;
         text_index = 0;
-        for (int x = 0; x < solution_matrix[0].Count(); x++)
+        for (int y = 0; y < solution_matrix[0].Count(); y++)
         {
             VisualElement number_row = number_row_template.Instantiate();
-            for (int y = solution_matrix.Count() - 1; y >= 0; y--)
+            for (int x = solution_matrix.Count() - 1; x >= 0; x--)
             {
                 if (solution_matrix[y][x]) count++;
                 else if (count > 0)
@@ -313,8 +319,12 @@ public class SceneManager : MonoBehaviour
                 count = 0;
                 text_index++;
             }
+            if (text_index == 0)
+            {
+                (number_row.Children().First().Children().ToList()[text_index].Children().First() as Label).text = "0";
+            }
             text_index = 0;
-            number_cols.Add(number_row);
+            number_rows.Add(number_row);
         }
     }
     private void fill_cell(int x, int y)

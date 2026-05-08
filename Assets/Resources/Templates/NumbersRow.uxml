@@ -15,5 +15,20 @@
         <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
             <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
         </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
+            <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
+            <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
+            <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
+            <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
+            <ui:Label text="" style="width: 100%; height: 100%; font-size: 100%;"/>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
