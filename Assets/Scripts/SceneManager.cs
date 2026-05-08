@@ -272,28 +272,31 @@ public class SceneManager : MonoBehaviour
         
         for (int x = 0; x < solution_matrix[0].Count(); x++)
         {
-            VisualElement number_column = number_column_template.Instantiate(); 
+            VisualElement number_column = number_column_template.Instantiate();
+            number_column.style.flexGrow = 1;
+            Label number_label = number_column.Q<Label>();
             for (int y = 0; y < solution_matrix.Count(); y++)
             {
                 if (solution_matrix[y][x]) count++;
                 else if (count > 0)
                 {
-                    (number_column.Children().First().Children().First() as Label).text = count.ToString();
+                    number_label.text += "\n" + count.ToString();
                     count = 0;
                     text_index++;
                 }
             }
             if (count > 0)
             {
-                (number_column.Children().First().Children().First() as Label).text = count.ToString();
+                number_label.text += "\n" + count.ToString();
                 count = 0;
                 text_index++;
             }
             if (text_index == 0)
             {
-                (number_column.Children().First().Children().First() as Label).text = "0";
+                number_label.text = "0";
             }
             text_index = 0;
+            //Debug.Log(number_label.text);
             number_cols.Add(number_column);
         }
         
@@ -303,27 +306,30 @@ public class SceneManager : MonoBehaviour
         for (int y = 0; y < solution_matrix[0].Count(); y++)
         {
             VisualElement number_row = number_row_template.Instantiate();
+            number_row.style.flexGrow = 1;
+            Label number_label = number_row.Q<Label>();
             for (int x = 0; x < solution_matrix.Count(); x++)
             {
                 if (solution_matrix[y][x]) count++;
                 else if (count > 0)
                 {
-                    (number_row.Children().First().Children().First() as Label).text += count.ToString();
+                    number_label.text += count.ToString() + " ";
                     count = 0;
                     text_index++;
                 }
             }
             if (count > 0)
             {
-                (number_row.Children().First().Children().First() as Label).text += count.ToString();
+                number_label.text += count.ToString() + " ";
                 count = 0;
                 text_index++;
             }
             if (text_index == 0)
             {
-                (number_row.Children().First().Children().First() as Label).text = "0";
+                number_label.text = "0 ";
             }
             text_index = 0;
+            //Debug.Log(number_label.text);
             number_rows.Add(number_row);
         }
     }

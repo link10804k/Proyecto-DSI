@@ -1,34 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 0; flex-direction: column-reverse; flex-shrink: 0; width: 100%; height: 100%;">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%;">
-            <ui:Label text="" style="width: 100%; height: 100%;"/>
-        </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 0; flex-direction: column; flex-shrink: 0; width: 100%; height: 100%;">
+        <ui:Label text="" style="width: 100%; height: 100%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 4px 100px; -unity-text-align: lower-center; white-space: normal;"/>
     </ui:VisualElement>
 </ui:UXML>
