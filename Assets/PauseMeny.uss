@@ -12,23 +12,6 @@
     flex-wrap: wrap;
 }
 
-.LevelButton {
-    margin-top: 0;
-    margin-right: 37px;
-    margin-bottom: 0;
-    margin-left: 27px;
-    flex-shrink: 1;
-    flex-grow: 0;
-    padding-top: 43px;
-    padding-right: 43px;
-    padding-bottom: 43px;
-    padding-left: 43px;
-    aspect-ratio: 1;
-    width: 12%;
-    transition-property: scale;
-    transition-duration: 0.1s;
-}
-
 .textInfo {
     flex-grow: 1;
     background-color: rgb(188, 191, 196);
@@ -64,6 +47,23 @@
     transition-duration: 0.1s;
 }
 
+.LevelButton {
+    margin-top: 0;
+    margin-right: 37px;
+    margin-bottom: 0;
+    margin-left: 27px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    aspect-ratio: auto;
+    transition-property: scale;
+    transition-duration: 0.1s;
+    width: 12%;
+}
+
 .LevelButton:hover {
     margin-top: 0;
     margin-right: 37px;
@@ -75,9 +75,10 @@
     padding-right: 43px;
     padding-bottom: 43px;
     padding-left: 43px;
-    aspect-ratio: 1;
-    width: 6%;
-    scale: 1.1 1.1;
+    aspect-ratio: auto;
+    scale: 1.1 1.1 0;
     transition-property: scale;
     transition-duration: 0.1s;
+    transform-origin: center;
+    width: 12%;
 }
