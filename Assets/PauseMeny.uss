@@ -28,24 +28,7 @@
     border-bottom-right-radius: 20px;
 }
 
-.Puase_button {
-    top: 55%;
-    right: -8%;
-    transition-property: right;
-    translate: 0 0;
-    position: absolute;
-    transition-duration: 0.1s;
-    justify-content: center;
-}
 
-.Puase_button:hover {
-    top: 55%;
-    right: -6%;
-    transition-property: right;
-    translate: 0 0;
-    position: absolute;
-    transition-duration: 0.1s;
-}
 
 .LevelButton {
     margin-top: 0;
@@ -81,4 +64,26 @@
     transition-duration: 0.1s;
     transform-origin: center;
     width: 12%;
+}
+
+.Back_button {
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    height: 94px;
+    left: 92%;
+    top: 58%;
+    transition-property: left;
+    transition-duration: 0.1s;
+}
+
+.Back_button:hover {
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    height: 94px;
+    left: 91%;
+    top: 58%;
+    transition-property: left;
+    transition-duration: 0.1s;
 }
